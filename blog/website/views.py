@@ -7,7 +7,7 @@ from .models import Post
 def hello_blog(request):
     lista = ['Django', 'Python', 'Git', 'Banco de Dados',
     'HTML', 'Linux', 'UWSGI', 'Nginx', 'Systemctl']
-    list_posts = Post.objects.all()
+    list_posts = Post.objects.filter(deleted=False)
     
     data = {'name': 'Curso de Django 3',
     'lista_tecnologias': lista,
@@ -15,3 +15,7 @@ def hello_blog(request):
     
     
     return render(request, 'index.html', data)
+
+def post_detail(request, id):
+    post = Post.objects.get(id=id)
+    return render(request, 'post_detail.html', {'post': post})

@@ -1,0 +1,32 @@
+#post_completo{
+    background-color: #fff;
+    width: 98%;
+    height: auto;
+    margin: 0 auto;
+    padding-bottom: 3vh;
+}
+
+.cat{
+    font-size: 14px;
+    color: rgb(16, 79, 151);
+    margin-left: 6%;
+}
+
+.content{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    padding: 4vh 0;
+}
+.image-post{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 3vh;
+}
+
+#post-content{
+
+    margin-bottom: 3vh;
+}

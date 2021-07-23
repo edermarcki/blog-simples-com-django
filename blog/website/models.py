@@ -16,7 +16,10 @@ class Post(models.Model):
         default= Categorias.GR
     )
     deleted = models.BooleanField(default=False)
-
+    image = models.ImageField(upload_to='posts', null=True, blank=True)
 
     def __str__(self):
         return self.title
+
+    def get_category_label(self):
+        return self.get_categories_display()

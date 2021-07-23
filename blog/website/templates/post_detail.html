@@ -4,8 +4,9 @@
 <html lang="pt-br">
 	<head>
 		<meta charset="utf-8" />
-        <title>Blog Simples Utilizando Django 3.2</title>
+        <title>{{post.title}}</title>
 	    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+        <link rel="stylesheet" href="{% static 'assets/css/posts.css' %} " />
         <!-- title font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,32 +30,17 @@
             
         </header>
         <div class='main-content'>
-        <div class='description'>
-            <div class="desc-title">
-            <h2>Ipsum lorem dolor aliquam ante commodo magna sed accumsan
-            arcu neque.</h2>
-            </div>
-            <p class='desc-text'>Lorem Ipsum is simply dummy text of the printing 
-            and typesetting industry. Lorem Ipsum has been the industry's standard 
-            dummy text ever since the 1500s, when an unknown printer took a galley
-            of type and scrambled it to make a type specimen book. It has survived
-            not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.</p>    
-        </div>
-        <div id='posts'>
-            {% for post in posts %}
-                <div class="posts-header">
-                <h3 class='post-title'>{{post.title}}</h3>
-                <span class='category'><b>{{ post.get_category_label }}</span></b>
+        <div id='post_completo'>
+                <h1 class='post-title'>{{post.title}}</h1>
+                <span class='cat'><b>{{ post.get_category_label }}</span></b>
+                <div class='content'>  
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" width="50%" 
+                    height="50%" class="image-post">
+                {% endif %}      
+                    <span id='post-content'>{{post.content|linebreaks}}</span>
                 </div>
-                <div class='resume-wrap'>              
-                <span id='post-content'>{{post.content|truncatewords:48}}</span>
-                </div>
-                <!--{% if post.image %}
-                    <img src="{{ post.image.url }}" width="35%" height="25%">
-                {% endif %}   -->
-                <a href="{% url 'post_detail' post.id %}"><div class='btn'>Leia mais</div></a>
-            {% endfor %}
+                <a href="{% url 'blog'%}"><div class='btn'>Voltar</div></a>
         </div>
     </div>
         <footer>
