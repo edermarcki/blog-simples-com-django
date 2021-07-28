@@ -1,0 +1,40 @@
+{%load static%}
+<!DOCTYPE html>
+
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+        <title>Obrigado!</title>
+	    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+        <link rel="stylesheet" href="{% static 'assets/css/posts.css' %} " />
+        <!-- title font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+        <!-- content font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+	</head>
+    <body>
+        <header style="background-image: url('{% static 'images/pexels-markus-spiske-header.jpg' %}')">
+            <div class='color-overlay'></div>
+            <h1>Blog Simples Utilizando Django 3</h1>
+            <span id='subtitle'>Lorem Ipsum is simply dummy text of the
+                printing and typesetting industry.</span>
+            <div class='contact'>
+                <a href="https://github.com/edermarcki" target="_blank"><img width='30' height="30" src="{% static 'images/github-brands.svg' %}"  alt='github.com/edermarcki'></a>
+                <a href="https://www.linkedin.com/in/eder-aparecido-marcki-j%C3%BAnior-b31b6a210/" target="_blank"><img width='30' height="30" src="{% static 'images/linkedin-brands.svg' %}" alt='https://www.linkedin.com/in/eder-aparecido-marcki-j%C3%BAnior-b31b6a210'></a>
+                <a href="mailto:edermarcki@live.com"><img width='30' height="30" src="{% static 'images/envelope-solid.svg' %}" alt='edermarcki@live.com'></a>
+            </div>
+            
+        </header>
+        <div class="sucessful">
+            <h2 style="text-align: center; margin: 5vh;">Obrigado {{name_contact}}, sua mensagem foi enviada com sucesso!</h2>
+            <a href="{% url 'blog'%}"><div class='btn' style="margin-bottom: 20vh;">Voltar</div></a>
+        </div>
+    <footer>
+        <h4>© Eder Marcki Jr | Blog Simples Utilizando Django</h4>
+    </footer> 
+</body>
+</html>

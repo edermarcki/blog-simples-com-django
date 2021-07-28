@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 	</head>
 	<body>
-        <header style="background-image: url('{% static 'images/pexels-markus-spiske-header.jpg' %}')">
+      <header style="background-image: url({% static 'images/pexels-markus-spiske-header.jpg' %})">
             <div class='color-overlay'></div>
             <h1>Blog Simples Utilizando Django 3</h1>
             <span id='subtitle'>Lorem Ipsum is simply dummy text of the
@@ -57,6 +57,44 @@
             {% endfor %}
         </div>
     </div>
+        <!-- form -->
+        <section id="form">
+            <h2>Entrar em contato</h2>
+            <p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>
+            <div class="form-contact">
+                    <form method="post" action="{% url 'save_form' %}">
+                        {% csrf_token %}
+                        <div class="form-fields">
+                            <input type="text" name="name" id="name" placeholder="Nome" />
+                            <input type="email" name="email" id="email" placeholder="Email" />
+                            <textarea name="message" id="message" placeholder="Mensagem" rows="4"></textarea>
+                        </div>
+                        <ul class="enviar">
+                            <li><input type="submit" value="Enviar Mensagem" /></li>
+                        </ul>
+                    </form>
+
+                <div class="another-info">
+                    <ul class="info-icons">
+                        <div class="end"><li>
+                            <h3 ><span class="label">Endereço</span></h3>
+                            Av. Algum Lugar - 1234<br />
+                            São Paulo, SP - 00000<br />
+                            Brasil
+                        </li></div>
+                        <div class="phone"><li>
+                            <h3 ><span class="label">Telefone</span></h3>
+                            000-000-0000
+                        </li></div>
+                        <div class="email"><li>
+                            <h3 ><span class="label">Email</span></h3>
+                            <a href="mailto:edermarcki@live.com">edermarcki@live.com</a>
+                        </li></div>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- footer -->
         <footer>
             <h4>© Eder Marcki Jr | Blog Simples Utilizando Django</h4>
         </footer>            
